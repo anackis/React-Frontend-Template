@@ -1,0 +1,82 @@
+@import '../../styles/mixins/mixins';
+
+.navbar {
+  position: fixed;
+  top: -100px; 
+  width: 100%;
+  background-color: #262626;
+  padding: 10px 0;
+  box-shadow: none;
+  animation: slideDown 1.3s forwards;
+  font-size: 20px;
+  z-index: 999;
+  .nav-container {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  .navbar-brand {
+    @include flexCenter;
+    cursor: pointer;
+    font-weight: bold;    
+    margin-right: 20px;
+    transition: all 0.3s ease;
+    img {
+      height: 30px;
+      margin-right: 3px;
+    }
+  }
+  .navbar-brand:hover {
+    scale: 1.02;
+  }
+  .navbar-brand:active {
+    scale: 1;
+  }
+  .navbar-links {
+    display: flex;
+  }
+  .navbar-link {
+    display: block;
+    height: 20px;
+    margin-left: 15px;
+    text-decoration: none;
+    color: white; 
+    transition: all 0.2s ease;
+  }
+  .navbar-link:hover {
+    text-shadow: 
+    0 0 2px #fff, 
+    0 0 5px var(--primary-color), 
+    0 0 10px var(--primary-color), 
+    0 0 15px var(--primary-color);
+    scale: 1.04;
+  }
+  .navbar-link:active {
+    scale: 1;
+  }
+  .navbar-links .active {
+    text-shadow: 
+    0 0 2px #fff, 
+    0 0 5px var(--primary-color), 
+    0 0 10px var(--primary-color), 
+    0 0 15px var(--primary-color);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    top: -100px;
+    box-shadow: none;
+  }
+  to {
+    top: 0;
+    box-shadow: 
+      0 0 10px var(--primary-color), 
+      0 0 10px var(--primary-color), 
+      0 0 25px var(--primary-color), 
+      0 0 10px var(--primary-color);
+  }
+}

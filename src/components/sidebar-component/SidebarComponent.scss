@@ -1,0 +1,45 @@
+@import '../../styles/mixins/mixins.scss';
+
+.sidebar {
+  padding-top: 100px;
+  width: 250px;  
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #262626;
+  transition: transform 0.3s ease; 
+  border-right: 2px solid #3C3C3C;
+
+  &.hidden {
+    transform: translateX(-100%);  
+  }
+
+  .sidebar-toggle-button {
+    @include flexCenter;
+    border: none;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    background-color: var(--primary-color);
+    color: red;
+    position: absolute;
+    top: 100px; 
+    right: -43px;  
+    height: 40px;
+    width: 40px;  
+    transition: all 0.2s ease-in-out;
+  }
+
+  .sidebar-toggle-button:hover {
+    box-shadow: 
+    0 0 10px var(--primary-color);
+  }
+
+  .sidebar-toggle-button:active {
+    transform: scale(0.95);
+  }
+
+  .sidebar-toggle-button:focus {
+    outline: none;
+  }
+}

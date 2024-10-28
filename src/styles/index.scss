@@ -1,0 +1,84 @@
+
+:root {
+  --background-primary-color: #202020;
+  --background-secondary-color: #3C3C3C;
+  --background-third-color: #262626;
+  --primary-color: #F0650F;
+  --primary-active-color: red;
+  // --text-color: #333;
+  // #171717
+  // #2F2F2F
+  --text-color: #fff;
+  --link-color: #0070f3;
+  --border-color: #444;
+
+  --font-size-regular: 16px;
+  --font-size-large: 24px;
+  --font-size-small: 12px;
+}
+
+[data-theme="dark"] {
+  --background-primary-color: #333;
+  --background-secondary-color: grey;
+  --primary-active-color: red;
+  --text-color: #fff;
+  --link-color: #1a73e8;
+  --border-color: #444;
+}
+
+[data-theme="light"] {
+  --primary-active-color: red;
+  --background-primary-color: #fff;
+  --background-secondary-color: grey;
+  --text-color: #333;
+  --link-color: #0070f3;
+  --border-color: #ddd;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  background: var(--background-primary-color);
+  color: var(--text-color);
+}
+
+#root {
+  height: 100%;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto; 
+  max-width: 1200px; 
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.button {
+  border-radius: 8px;
+}
+
+.app-content {
+  transition: margin-left 0.3s ease; 
+}
+
+.sidebar {
+  transition: transform 0.3s ease, width 0.3s ease; 
+}
