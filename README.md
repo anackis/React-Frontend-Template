@@ -1,46 +1,17 @@
-# Getting Started with Create React App
+# About This Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Developing a reusable React Frontend Template, designed to streamline future projects. The current files and styles are in a developmental stage and subject to updates as the project evolves.
 
-## Available Scripts
+![1](https://github.com/user-attachments/assets/0c5cd5e7-892c-41f9-97e2-329658bd1ec7)
 
-In the project directory, you can run:
+![2](https://github.com/user-attachments/assets/abc1a7ef-8798-458b-9728-bb224b4d0363)
 
-### `npm start`
+![3](https://github.com/user-attachments/assets/7b1593ae-881a-404a-b96b-de42d87bd33a)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![4](https://github.com/user-attachments/assets/3998c8f6-b2c0-4ae7-a926-fc0f3e8c2eb4)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+![5](https://github.com/user-attachments/assets/963be322-1332-4a33-bafb-eeac54c07aaa)
 
-### `npm test`
+![6](https://github.com/user-attachments/assets/e566bc9c-584b-4832-a21b-228fb8695519)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+![7](https://github.com/user-attachments/assets/09904038-b2c5-4bff-8a07-7b545be031ba)
