@@ -1,7 +1,1 @@
-
-
-const useStorage = () => {
-
-};
-
-export default useStorage;
+export const useStorage = () => {};

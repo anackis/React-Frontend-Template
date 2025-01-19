@@ -1,16 +1,12 @@
-
 // import ErrorComponent from '../../components/error-component/error-component';
-import LoginComponenet from '../../components/login-component/LoginComponent';
-import './Login.scss';
+import { LoginComponenet } from "../../components/login-component/login-component";
+import "./login-page.scss";
 
-function Login() {
-
+export function Login() {
   return (
-    <main className='login-page'>
+    <main className="login-page">
       <LoginComponenet />
       {/* <ErrorComponent message={"Error"}/> */}
     </main>
   );
 }
-
-export default Login;

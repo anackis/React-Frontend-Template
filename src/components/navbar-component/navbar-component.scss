@@ -1,8 +1,8 @@
-@import '../../styles/mixins/mixins';
+@import "../../styles/mixins/mixins";
 
 .navbar {
   position: fixed;
-  top: -100px; 
+  top: -100px;
   width: 100%;
   background-color: #262626;
   padding: 10px 0;
@@ -21,7 +21,7 @@
   .navbar-brand {
     @include flexCenter;
     cursor: pointer;
-    font-weight: bold;    
+    font-weight: bold;
     margin-right: 20px;
     transition: all 0.3s ease;
     img {
@@ -30,39 +30,37 @@
     }
   }
   .navbar-brand:hover {
-    scale: 1.02;
+    // scale: 1.03;
   }
   .navbar-brand:active {
-    scale: 1;
+    // scale: 1;
   }
   .navbar-links {
     display: flex;
+    // justify-content: space-between;
+    // min-width: 240px;
   }
   .navbar-link {
     display: block;
     height: 20px;
-    margin-left: 15px;
+    margin-left: 20px;
     text-decoration: none;
-    color: white; 
+    color: white;
     transition: all 0.2s ease;
   }
   .navbar-link:hover {
-    text-shadow: 
-    0 0 2px #fff, 
-    0 0 5px var(--primary-color), 
-    0 0 10px var(--primary-color), 
-    0 0 15px var(--primary-color);
-    scale: 1.04;
+    text-shadow: 0 0 2px #fff, 0 0 4px var(--primary-color),
+      0 0 5px var(--primary-color), 0 0 6px var(--primary-color);
+    // scale: 1.04;
   }
   .navbar-link:active {
-    scale: 1;
+    // scale: 1.04;
   }
   .navbar-links .active {
-    text-shadow: 
-    0 0 2px #fff, 
-    0 0 5px var(--primary-color), 
-    0 0 10px var(--primary-color), 
-    0 0 15px var(--primary-color);
+    text-shadow: 0 0 2px #fff, 0 0 5px var(--primary-color),
+      0 0 6px var(--primary-color), 0 0 10px var(--primary-color),
+      0 0 15px var(--primary-color);
+    // scale: 1.04;
   }
 }
 
@@ -73,10 +71,7 @@
   }
   to {
     top: 0;
-    box-shadow: 
-      0 0 10px var(--primary-color), 
-      0 0 10px var(--primary-color), 
-      0 0 25px var(--primary-color), 
-      0 0 10px var(--primary-color);
+    box-shadow: 0 0 10px var(--primary-color), 0 0 10px var(--primary-color),
+      0 0 25px var(--primary-color), 0 0 10px var(--primary-color);
   }
 }

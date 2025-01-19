@@ -1,6 +1,1 @@
-
-const useFirestore = () => {
-
-};
-
-export default useFirestore;
+export const useFirestore = () => {};
