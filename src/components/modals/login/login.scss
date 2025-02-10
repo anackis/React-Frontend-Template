@@ -1,6 +1,4 @@
-@import '../../styles/mixins/mixins';
-
- 
+@import "../../../styles/mixins/mixins";
 
 .login-component {
   @include absoluteCenter;
@@ -12,9 +10,9 @@
   }
 
   button {
-    border: 1px solid #F0650F;
-    background-color: #F0650F;
-    color: #FFFFFF;
+    border: 1px solid #f0650f;
+    background-color: #f0650f;
+    color: #ffffff;
     font-weight: bold;
     padding: 12px 45px;
     letter-spacing: 1px;
@@ -23,9 +21,7 @@
   }
 
   button:hover {
-    box-shadow: 
-    0 0 10px #F0650F,
-    0 0 10px #F0650F;
+    box-shadow: 0 0 10px #f0650f, 0 0 10px #f0650f;
   }
 
   button:active {
@@ -38,7 +34,7 @@
 
   button.ghost {
     background-color: transparent;
-    border-color: #FFFFFF;
+    border-color: #ffffff;
   }
 
   form {
@@ -60,26 +56,20 @@
     outline: none;
     border: none;
     border: 0px solid #000;
-    box-shadow: 
-      0 0 10px #F0650F,
-      0 0 10px #F0650F;
+    box-shadow: 0 0 10px #f0650f, 0 0 10px #f0650f;
   }
   input:focus {
     outline: none;
     border: none;
     border: 0px solid #000;
-    box-shadow: 
-      0 0 10px #F0650F,
-      0 0 10px #F0650F,
-      0 0 15px #F0650F;
+    box-shadow: 0 0 10px #f0650f, 0 0 10px #f0650f, 0 0 15px #f0650f;
   }
 
   .login-component-container {
     margin: 0 auto;
     background-color: #262626;
     border-radius: 14px;
-      box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
-        0 10px 10px rgba(0,0,0,0.22);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     position: relative;
     overflow: hidden;
     width: 768px;
@@ -119,12 +109,14 @@
   }
 
   @keyframes show {
-    0%, 49.99% {
+    0%,
+    49.99% {
       opacity: 0;
       z-index: 1;
     }
-    
-    50%, 100% {
+
+    50%,
+    100% {
       opacity: 1;
       z-index: 5;
     }
@@ -141,12 +133,18 @@
     z-index: 100;
   }
 
-  .login-component-container.right-panel-active .overlay-container{
+  .login-component-container.right-panel-active .overlay-container {
     transform: translateX(-100%);
   }
 
   .overlay {
-    background: linear-gradient(315deg, rgba(255,162,0,1) 0%, rgba(235,83,14,1) 31%, rgba(231,68,13,1) 77%, rgba(214,0,8,1) 100%);
+    background: linear-gradient(
+      315deg,
+      rgba(255, 162, 0, 1) 0%,
+      rgba(235, 83, 14, 1) 31%,
+      rgba(231, 68, 13, 1) 77%,
+      rgba(214, 0, 8, 1) 100%
+    );
     position: relative;
     left: -100%;
     height: 100%;
@@ -189,13 +187,9 @@
     transform: translateX(20%);
   }
 
-
-
-
-
   // Login Notification
   .login-notification {
-    background-color: #3C3C3C;
+    background-color: #3c3c3c;
     border-radius: 14px;
     padding: 20px;
   }
@@ -219,5 +213,4 @@
       margin: 0 auto;
     }
   }
-
 }

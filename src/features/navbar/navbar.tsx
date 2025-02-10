@@ -1,5 +1,5 @@
 import { NavLink, useNavigate } from "react-router-dom";
-import "./navbar-component.scss";
+import "./navbar.scss";
 // import logo from '../../assets/icons/web-art.svg';
 
 export const Navbar = () => {

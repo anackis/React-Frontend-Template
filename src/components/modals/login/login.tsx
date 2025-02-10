@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { signIn, signUp, logOut } from "../../firebase/auth";
-import { useFirebaseAuth } from "../../hooks/firebase-hooks/useFirebaseAuth";
+import { signIn, signUp, logOut } from "../../../firebase/auth";
+import { useFirebaseAuth } from "../../../hooks/firebase-hooks/useFirebaseAuth";
 import { NavLink, useNavigate } from "react-router-dom";
-import { Spinner } from "../spinner-component/spinner-component";
-import { ErrorComponent } from "../error-component/error-component";
-import "./login-component.scss";
+import { Spinner } from "../../components/spinner/spinner";
+import { ErrorComponent } from "../error/error";
+import "./login.scss";
 
 export function LoginComponenet() {
   const { currentUser, loading } = useFirebaseAuth();
@@ -48,7 +48,7 @@ export function LoginComponenet() {
     }
   };
 
-  if (loading) {
+  if (!loading) {
     return (
       <div className="login-component">
         <Spinner />

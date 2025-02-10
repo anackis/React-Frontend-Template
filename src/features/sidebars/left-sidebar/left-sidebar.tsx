@@ -1,12 +1,12 @@
-import { IconComponent } from "../icon-component/icon-component";
-import "./sidebar-component.scss";
+import { IconComponent } from "../../../components/components/icon/icon";
+import "./left-sidebar.scss";
 
 interface SidebarProps {
   isVisible: boolean;
   toggleSidebar: () => void;
 }
 
-export const Sidebar = ({ isVisible, toggleSidebar }: SidebarProps) => {
+export const LeftSidebar = ({ isVisible, toggleSidebar }: SidebarProps) => {
   return (
     <div className={`sidebar ${isVisible ? "" : "hidden"}`}>
       <h1>Hello left sidebar</h1>

@@ -1,9 +1,9 @@
-import { Navbar } from "./components/navbar-component/navbar-component";
+import { Navbar } from "./features/navbar/navbar";
 import { Route, Routes } from "react-router-dom";
 import { About } from "./pages/about-page/about-page";
 import { Home } from "./pages/home-page/home-page";
 import { Login } from "./pages/login-page/login-page";
-import { Sidebar } from "./components/sidebar-component/sidebar-component";
+import { LeftSidebar } from "./features/sidebars/left-sidebar/left-sidebar";
 import "./styles/App.scss";
 import { useState } from "react";
 import { NotFoundPage } from "./pages/not-found-page/not-found-page";
@@ -18,7 +18,7 @@ export function App() {
   return (
     <>
       <Navbar />
-      <Sidebar isVisible={isSidebarVisible} toggleSidebar={toggleSidebar} />
+      <LeftSidebar isVisible={isSidebarVisible} toggleSidebar={toggleSidebar} />
       <div
         className="app-content"
         style={{ marginLeft: isSidebarVisible ? "250px" : "0" }}

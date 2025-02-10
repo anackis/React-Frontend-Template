@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./error-component.scss";
+import "./error.scss";
 
 interface ErrorComponentProps {
   message: string;

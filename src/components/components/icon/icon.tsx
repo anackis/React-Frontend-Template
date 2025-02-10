@@ -1,4 +1,4 @@
-import "./icon-component.scss";
+import "./icon.scss";
 
 interface IconProps {
   name: keyof typeof icons;
