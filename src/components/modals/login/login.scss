@@ -39,7 +39,7 @@
 
   form {
     @include flexCenter;
-    background-color: #262626;
+    background-color: var(--background-primary-color);
     flex-direction: column;
     padding: 0 50px;
     height: 100%;
@@ -67,7 +67,7 @@
 
   .login-component-container {
     margin: 0 auto;
-    background-color: #262626;
+    background-color: var(--background-primary-color);
     border-radius: 14px;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     position: relative;
@@ -161,7 +161,6 @@
     @include flexCenter;
     position: absolute;
     flex-direction: column;
-    padding: 0 40px;
     text-align: center;
     top: 0;
     height: 100%;
@@ -189,12 +188,12 @@
 
   // Login Notification
   .login-notification {
-    background-color: #3c3c3c;
+    background-color: var(--background-secondary-color);
     border-radius: 14px;
     padding: 20px;
   }
   .login-notification-wrapper {
-    background-color: #262626;
+    background-color: var(--background-primary-color);
     padding: 20px 60px;
     border-radius: 12px;
     a {

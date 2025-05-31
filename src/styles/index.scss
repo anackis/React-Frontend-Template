@@ -1,15 +1,15 @@
-
 :root {
-  --background-primary-color: #202020;
-  --background-secondary-color: #3C3C3C;
-  --background-third-color: #262626;
-  --primary-color: #F0650F;
+  --background-primary-color: #262626;
+  --background-secondary-color: #3c3c3c;
+  --background-third-color: #333;
+  --primary-color: #f0650f;
+  --secondary-color: #262626;
   --primary-active-color: red;
   // --text-color: #333;
   // #171717
   // #2F2F2F
   --text-color: #fff;
-  --link-color: #0070f3;
+  --link-color: #3b6ba3;
   --border-color: #444;
 
   --font-size-regular: 16px;
@@ -18,8 +18,9 @@
 }
 
 [data-theme="dark"] {
-  --background-primary-color: #333;
-  --background-secondary-color: grey;
+  --background-primary-color: #262626;
+  --background-secondary-color: #3c3c3c;
+  --background-third-color: #333;
   --primary-active-color: red;
   --text-color: #fff;
   --link-color: #1a73e8;
@@ -29,7 +30,8 @@
 [data-theme="light"] {
   --primary-active-color: red;
   --background-primary-color: #fff;
-  --background-secondary-color: grey;
+  --background-secondary-color: black;
+  --background-third-color: #fff;
   --text-color: #333;
   --link-color: #0070f3;
   --border-color: #ddd;
@@ -41,10 +43,11 @@
   box-sizing: border-box;
 }
 
-body, html {
+body,
+html {
   height: 100%;
-  font-family: 'Roboto', sans-serif;
-  background: var(--background-primary-color);
+  font-family: "Roboto", sans-serif;
+  background: var(--background-third-color);
   color: var(--text-color);
 }
 
@@ -54,14 +57,14 @@ body, html {
 
 .container {
   width: 90%;
-  margin: 0 auto; 
-  max-width: 1200px; 
+  margin: 0 auto;
+  max-width: 1200px;
 }
 
 a {
   color: #007bff;
   text-decoration: none;
-  
+
   &:hover {
     text-decoration: underline;
   }
@@ -76,9 +79,9 @@ button:hover {
 }
 
 .app-content {
-  transition: margin-left 0.3s ease; 
+  transition: margin-left 0.3s ease;
 }
 
 .sidebar {
-  transition: transform 0.3s ease, width 0.3s ease; 
+  transition: transform 0.3s ease, width 0.3s ease;
 }

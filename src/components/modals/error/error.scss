@@ -20,7 +20,7 @@
 }
 
 .error-content {
-  background-color: #3c3c3c;
+  background-color: var(--background-secondary-color);
   border-radius: 14px;
   border: 2px solid red;
   box-shadow: 0 0 10px red;

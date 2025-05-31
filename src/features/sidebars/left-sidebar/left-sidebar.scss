@@ -7,9 +7,9 @@
   left: 0;
   top: 0;
   bottom: 0;
-  background-color: #262626;
+  background-color: var(--background-primary-color);
   transition: transform 0.3s ease;
-  border-right: 2px solid #3c3c3c;
+  border-right: 2px solid var(--background-secondary-color);
 
   &.hidden {
     transform: translateX(-100%);
@@ -24,10 +24,15 @@
     color: red;
     position: absolute;
     top: 100px;
-    right: -43px;
+    right: -42px;
     height: 40px;
     width: 40px;
     transition: all 0.2s ease-in-out;
+
+    svg {
+      transition: transform 0.3s ease-in-out;
+      transform-origin: center;
+    }
   }
 
   .sidebar-toggle-button:hover {
@@ -41,4 +46,8 @@
   .sidebar-toggle-button:focus {
     outline: none;
   }
+}
+
+.sidebar.hidden .sidebar-toggle-button svg {
+  transform: rotate(180deg);
 }

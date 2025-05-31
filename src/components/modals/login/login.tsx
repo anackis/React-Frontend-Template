@@ -48,7 +48,7 @@ export function LoginComponenet() {
     }
   };
 
-  if (!loading) {
+  if (loading) {
     return (
       <div className="login-component">
         <Spinner />

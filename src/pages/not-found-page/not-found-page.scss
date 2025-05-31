@@ -1,20 +1,15 @@
 @import "../../styles/mixins/mixins";
 
-// .not-found-page {
-//   @include absoluteCenter;
-
-// }
-
 .not-found-page-component {
   @include absoluteCenter;
   text-align: center;
   .not-found-page-notification {
-    background-color: #3c3c3c;
+    background-color: var(--background-secondary-color);
     border-radius: 14px;
     padding: 20px;
   }
   .not-found-page-notification-wrapper {
-    background-color: #262626;
+    background-color: var(--background-primary-color);
     padding: 20px 60px;
     border-radius: 12px;
     a {
