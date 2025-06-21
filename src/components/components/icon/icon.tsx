@@ -1,5 +1,3 @@
-import "./icon.scss"
-
 interface IconProps {
   name: keyof typeof icons
   size?: number

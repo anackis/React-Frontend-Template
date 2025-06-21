@@ -10,3 +10,21 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+@mixin buttonBase($bg: $primary-color, $color: #fff) {
+  border: 1px solid $bg;
+  background-color: $bg;
+  color: $color;
+  font-weight: bold;
+  padding: 12px 45px;
+  border-radius: 8px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
+}
+
+@mixin inputBase($radius: 8px, $padding: 12px 15px) {
+  border-radius: $radius;
+  border: none;
+  padding: $padding;
+}

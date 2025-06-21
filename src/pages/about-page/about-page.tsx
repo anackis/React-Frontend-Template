@@ -1,12 +1,12 @@
-import "./about-page.scss";
+import "./about-page.scss"
 
 export const About = () => {
   return (
     <div className="container">
-      <div className="about">
-        <div className="about-wrapper">
-          <h1>About This Project</h1>
-          <br />
+      {/* <div className="about"> */}
+      {/* <div className="about-wrapper"> */}
+      <h1>About This Project</h1>
+      {/* <br />
 
           <h2>Project Overview</h2>
           <br />
@@ -28,9 +28,9 @@ export const About = () => {
             <br />
             <br />
             Conclution...
-          </p>
-        </div>
-      </div>
+          </p> */}
+      {/* </div> */}
+      {/* </div> */}
     </div>
-  );
-};
+  )
+}

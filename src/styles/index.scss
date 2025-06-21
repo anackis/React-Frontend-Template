@@ -49,6 +49,7 @@ html {
   font-family: "Roboto", sans-serif;
   background: var(--background-third-color);
   color: var(--text-color);
+  letter-spacing: 0.00938em;
 }
 
 #root {
@@ -84,4 +85,10 @@ button:hover {
 
 .sidebar {
   transition: transform 0.3s ease, width 0.3s ease;
+}
+
+.app-content {
+  display: flex;
+  height: 100%;
+  padding-top: 60px;
 }

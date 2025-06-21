@@ -1,10 +1,15 @@
-import { useState } from "react";
-import "./error.scss";
+import { useState } from "react"
+import Dialog from "@mui/material/Dialog"
+import DialogTitle from "@mui/material/DialogTitle"
+import DialogContent from "@mui/material/DialogContent"
+import DialogActions from "@mui/material/DialogActions"
+import Button from "@mui/material/Button"
+import ErrorOutlineIcon from "@mui/icons-material/ErrorOutline"
 
 interface ErrorComponentProps {
-  message: string;
-  onRetry?: () => void;
-  onCancel?: () => void;
+  message: string
+  onRetry?: () => void
+  onCancel?: () => void
 }
 
 export const ErrorComponent = ({
@@ -12,40 +17,43 @@ export const ErrorComponent = ({
   onRetry = () => window.location.reload(),
   onCancel,
 }: ErrorComponentProps) => {
-  const [isVisible, setIsVisible] = useState(true);
+  const [open, setOpen] = useState(true)
 
   const handleClose = () => {
-    setIsVisible(false);
+    setOpen(false)
     if (onCancel) {
-      onCancel();
+      onCancel()
     }
-  };
-
-  if (!isVisible) {
-    return null;
   }
 
   return (
-    <div className="error-modal">
-      <div className="error-overlay" onClick={handleClose}></div>
-
-      <div className="error-content">
-        <h2>Error!</h2>
-
-        <p>{message}</p>
-
-        <div className="error-actions">
-          {onRetry && (
-            <button className="button" onClick={onRetry}>
-              Retry
-            </button>
-          )}
-
-          <button className="button close-button" onClick={handleClose}>
-            Close
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-};
+    <Dialog
+      open={open}
+      onClose={handleClose}
+      aria-labelledby="error-dialog-title"
+      maxWidth="xs"
+      fullWidth
+    >
+      <DialogTitle
+        id="error-dialog-title"
+        sx={{ display: "flex", alignItems: "center", gap: 1 }}
+      >
+        <ErrorOutlineIcon color="error" />
+        <strong>Error !</strong>
+      </DialogTitle>
+      <DialogContent>
+        <strong>{message}</strong>
+      </DialogContent>
+      <DialogActions>
+        {onRetry && (
+          <Button variant="contained" color="primary" onClick={onRetry}>
+            Retry
+          </Button>
+        )}
+        <Button variant="outlined" color="error" onClick={handleClose}>
+          Close
+        </Button>
+      </DialogActions>
+    </Dialog>
+  )
+}
