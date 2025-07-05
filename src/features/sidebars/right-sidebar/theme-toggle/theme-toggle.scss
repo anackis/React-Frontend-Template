@@ -2,7 +2,7 @@
   position: relative;
   width: 67px;
   height: 34px;
-  background-color: var(--background-secondary-color);
+  // background-color: var(--background-secondary-color);
   border-radius: 50px;
   border: 2px solid var(--primary-color);
   cursor: pointer;
@@ -10,7 +10,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 6px;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease-in-out;
   overflow: hidden;
 
   .toggle-indicator {
@@ -20,8 +20,8 @@
     height: 30px;
     background-color: var(--primary-color);
     border-radius: 50%;
-    transition: transform 0.3s ease;
     z-index: 1;
+    transition: all 0.3s ease-in-out;
 
     display: flex;
     align-items: center;
@@ -29,7 +29,7 @@
 
     .theme-icon {
       position: absolute;
-      transition: opacity 0.3s ease;
+      transition: opacity 0.3s ease-in-out;
       opacity: 0;
     }
 

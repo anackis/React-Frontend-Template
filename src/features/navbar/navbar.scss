@@ -23,7 +23,7 @@
     cursor: pointer;
     font-weight: bold;
     margin-right: 20px;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease-in-out;
     img {
       height: 30px;
       margin-right: 3px;
@@ -46,7 +46,7 @@
     margin-left: 20px;
     text-decoration: none;
     color: white;
-    transition: all 0.2s ease;
+    transition: all 0.2s ease-in-out;
   }
   .navbar-link:hover {
     text-shadow: 0 0 2px #fff, 0 0 4px var(--primary-color),

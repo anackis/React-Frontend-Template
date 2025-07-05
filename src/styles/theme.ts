@@ -1,5 +1,16 @@
 import { createTheme, Theme } from "@mui/material/styles"
 
+declare module "@mui/material/styles" {
+  interface Palette {
+    backgroundSecondary: string
+    toggleBackground: string
+  }
+  interface PaletteOptions {
+    backgroundSecondary?: string
+    toggleBackground?: string
+  }
+}
+
 export const getAppTheme = (
   mode: "light" | "dark",
   primaryColor: string
@@ -10,12 +21,16 @@ export const getAppTheme = (
       primary: { main: primaryColor },
       ...(mode === "dark"
         ? {
-            background: { default: "#222", paper: "#3C3C3C" },
+            background: { default: "#222", paper: "#262626" },
             text: { primary: "#fff" },
+            backgroundSecondary: "#3c3c3c",
+            toggleBackground: "#3c3c3c",
           }
         : {
-            background: { default: "#fff", paper: "#f8f8f8" },
+            background: { default: "#fff", paper: "#fff" },
             text: { primary: "#222" },
+            backgroundSecondary: "#3c3c3c",
+            toggleBackground: "#fff",
           }),
     },
     components: {
@@ -25,6 +40,7 @@ export const getAppTheme = (
             borderRadius: 8,
           },
           outlined: ({ theme }) => ({
+            borderWidth: 2,
             ...(theme.palette.mode === "dark" && {
               borderColor: "#888",
               color: "#fff",
@@ -40,6 +56,7 @@ export const getAppTheme = (
       MuiDialog: {
         styleOverrides: {
           paper: {
+            borderRadius: 12,
             border: `2px solid ${primaryColor}`,
             boxShadow: `0 0 4px ${primaryColor}`,
           },

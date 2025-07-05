@@ -44,11 +44,7 @@ export const ColorPickers = ({
             onChange={(e) => handleSetPrimaryColor(e.target.value)}
           />
           <span className="edit-icon">
-            <IconComponent
-              name="pencil"
-              size={14}
-              color="var(--secondary-color)"
-            />
+            <IconComponent name="pencil" size={14} />
           </span>
         </div>
       </div>

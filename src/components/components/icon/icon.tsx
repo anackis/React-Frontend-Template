@@ -1,7 +1,11 @@
-interface IconProps {
-  name: keyof typeof icons
+import { useTheme } from "@mui/material"
+import { isDarkColor } from "../../../utils/common/utils"
+
+interface IconComponentProps {
+  name: string
   size?: number
   color?: string
+  backgroundColor?: string
   className?: string
 }
 
@@ -37,9 +41,14 @@ const icons: Record<string, IconDefinition> = {
 export const IconComponent = ({
   name,
   size = 24,
-  color = "black",
-  className = "",
-}: IconProps) => {
+  color,
+  backgroundColor,
+  className,
+}: IconComponentProps) => {
+  const theme = useTheme()
+  const bg = backgroundColor || theme.palette.primary.main
+  const iconColor = color || (isDarkColor(bg) ? "#fff" : "#222")
+
   const icon = icons[name]
   if (!icon) return null
 
@@ -48,8 +57,8 @@ export const IconComponent = ({
       width={`${size}px`}
       height={`${size}px`}
       viewBox={icon.viewBox}
-      fill={color}
-      className={className}
+      fill={iconColor}
+      className={`app-icon${className ? " " + className : ""}`}
       xmlns="http://www.w3.org/2000/svg"
     >
       <path d={icon.path} fill={color} fillRule="evenodd" clipRule="evenodd" />

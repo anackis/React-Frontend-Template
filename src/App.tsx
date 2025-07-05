@@ -8,16 +8,19 @@ import { useState } from "react"
 import { NotFoundPage } from "./pages/not-found-page/not-found-page"
 import { RightSidebar } from "./features/sidebars/right-sidebar/right-sidebar"
 import { getAppTheme } from "./styles/theme"
-import { ThemeProvider } from "@emotion/react"
+// import { ThemeProvider } from "@emotion/react"
+import { ThemeProvider } from "@mui/material/styles"
+import CssBaseline from "@mui/material/CssBaseline"
+import { ThemeCssVarsProvider } from "./components/components/theme-css-vars-provider"
 
 export function App() {
   const [isLeftSidebarVisible, setLeftSidebarVisible] = useState(true)
   const [isRightSidebarVisible, setIsRightSidebarVisible] = useState(false)
 
-  const [mode, setMode] = useState<"light" | "dark">("dark")
   const [primaryColor, setPrimaryColor] = useState("#f0650f")
+  const [themeMode, setThemeMode] = useState<"light" | "dark">("dark")
 
-  const theme = getAppTheme(mode, primaryColor)
+  const muiTheme = getAppTheme(themeMode, primaryColor)
 
   const toggleLeftSidebar = () => {
     setLeftSidebarVisible(!isLeftSidebarVisible)
@@ -27,33 +30,40 @@ export function App() {
 
   return (
     <>
-      <ThemeProvider theme={theme}>
-        <Navbar />
+      <ThemeProvider theme={muiTheme}>
+        <CssBaseline />
+        <ThemeCssVarsProvider>
+          <Navbar />
 
-        <LeftSidebar
-          isVisible={isLeftSidebarVisible}
-          toggleSidebar={toggleLeftSidebar}
-        />
+          <LeftSidebar
+            isVisible={isLeftSidebarVisible}
+            toggleSidebar={toggleLeftSidebar}
+          />
 
-        <RightSidebar
-          isVisible={isRightSidebarVisible}
-          toggleSidebar={toggleRightSidebar}
-        />
+          <RightSidebar
+            isVisible={isRightSidebarVisible}
+            toggleSidebar={toggleRightSidebar}
+            theme={themeMode}
+            setTheme={setThemeMode}
+            primaryColor={primaryColor}
+            setPrimaryColor={setPrimaryColor}
+          />
 
-        <div
-          className="app-content"
-          style={{ marginLeft: isLeftSidebarVisible ? "250px" : "0" }}
-        >
-          <Routes>
-            <Route path="/" element={<Home />} />
+          <div
+            className="app-content"
+            style={{ marginLeft: isLeftSidebarVisible ? "250px" : "0" }}
+          >
+            <Routes>
+              <Route path="/" element={<Home />} />
 
-            <Route path="/about" element={<About />} />
+              <Route path="/about" element={<About />} />
 
-            <Route path="/login" element={<Login />} />
+              <Route path="/login" element={<Login />} />
 
-            <Route path="*" element={<NotFoundPage />} />
-          </Routes>
-        </div>
+              <Route path="*" element={<NotFoundPage />} />
+            </Routes>
+          </div>
+        </ThemeCssVarsProvider>
       </ThemeProvider>
     </>
   )
