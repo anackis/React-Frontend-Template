@@ -27,7 +27,7 @@ export const getAppTheme = (
             toggleBackground: "#3c3c3c",
           }
         : {
-            background: { default: "#fff", paper: "#fff" },
+            background: { default: "#f5f5f5", paper: "#f5f5f5" },
             text: { primary: "#222" },
             backgroundSecondary: "#3c3c3c",
             toggleBackground: "#fff",

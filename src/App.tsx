@@ -8,18 +8,17 @@ import { useState } from "react"
 import { NotFoundPage } from "./pages/not-found-page/not-found-page"
 import { RightSidebar } from "./features/sidebars/right-sidebar/right-sidebar"
 import { getAppTheme } from "./styles/theme"
-// import { ThemeProvider } from "@emotion/react"
 import { ThemeProvider } from "@mui/material/styles"
 import CssBaseline from "@mui/material/CssBaseline"
-import { ThemeCssVarsProvider } from "./components/components/theme-css-vars-provider"
+import { useStyleContext } from "./components/providers/style-provider"
+import { Alert, Snackbar } from "@mui/material"
 
 export function App() {
   const [isLeftSidebarVisible, setLeftSidebarVisible] = useState(true)
   const [isRightSidebarVisible, setIsRightSidebarVisible] = useState(false)
 
-  const [primaryColor, setPrimaryColor] = useState("#f0650f")
-  const [themeMode, setThemeMode] = useState<"light" | "dark">("dark")
-
+  const { primaryColor, themeMode, colorError, setColorError } =
+    useStyleContext()
   const muiTheme = getAppTheme(themeMode, primaryColor)
 
   const toggleLeftSidebar = () => {
@@ -32,38 +31,47 @@ export function App() {
     <>
       <ThemeProvider theme={muiTheme}>
         <CssBaseline />
-        <ThemeCssVarsProvider>
-          <Navbar />
+        <Navbar />
 
-          <LeftSidebar
-            isVisible={isLeftSidebarVisible}
-            toggleSidebar={toggleLeftSidebar}
-          />
+        <LeftSidebar
+          isVisible={isLeftSidebarVisible}
+          toggleSidebar={toggleLeftSidebar}
+        />
 
-          <RightSidebar
-            isVisible={isRightSidebarVisible}
-            toggleSidebar={toggleRightSidebar}
-            theme={themeMode}
-            setTheme={setThemeMode}
-            primaryColor={primaryColor}
-            setPrimaryColor={setPrimaryColor}
-          />
+        <RightSidebar
+          isVisible={isRightSidebarVisible}
+          toggleSidebar={toggleRightSidebar}
+        />
 
-          <div
-            className="app-content"
-            style={{ marginLeft: isLeftSidebarVisible ? "250px" : "0" }}
+        <div
+          className="app-content"
+          style={{ marginLeft: isLeftSidebarVisible ? "250px" : "0" }}
+        >
+          <Routes>
+            <Route path="/" element={<Home />} />
+
+            <Route path="/about" element={<About />} />
+
+            <Route path="/login" element={<Login />} />
+
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </div>
+
+        <Snackbar
+          open={!!colorError}
+          autoHideDuration={3000}
+          onClose={() => setColorError("")}
+          anchorOrigin={{ vertical: "top", horizontal: "center" }}
+        >
+          <Alert
+            onClose={() => setColorError("")}
+            severity="warning"
+            sx={{ width: "100%" }}
           >
-            <Routes>
-              <Route path="/" element={<Home />} />
-
-              <Route path="/about" element={<About />} />
-
-              <Route path="/login" element={<Login />} />
-
-              <Route path="*" element={<NotFoundPage />} />
-            </Routes>
-          </div>
-        </ThemeCssVarsProvider>
+            {colorError}
+          </Alert>
+        </Snackbar>
       </ThemeProvider>
     </>
   )

@@ -3,6 +3,7 @@
 .spinner {
   @include flexCenter;
 }
+
 .spinner svg {
   animation: spin 2s linear infinite;
 }

@@ -1,17 +1,18 @@
 import { IconComponent } from "../../../../components/components/icon/icon"
-import "./color-pickers.scss"
+import "./color-picker.scss"
 
-interface ColorPickersProps {
+interface ColorPickerProps {
   primaryColor: string
   predefinedColors: string[]
   handleSetPrimaryColor: (color: string) => void
+  colorError?: string
 }
 
-export const ColorPickers = ({
+export const ColorPicker = ({
   primaryColor,
   predefinedColors,
   handleSetPrimaryColor,
-}: ColorPickersProps) => {
+}: ColorPickerProps) => {
   return (
     <div className="color-options">
       {predefinedColors.map((color) => (

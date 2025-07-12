@@ -1,28 +1,23 @@
 import { IconComponent } from "../../../components/components/icon/icon"
 import { ThemeToggle } from "./theme-toggle/theme-toggle"
-import { ColorPickers } from "./color-pickers/color-pickers"
+import { ColorPicker } from "./color-pickers/color-picker"
 import "./right-sidebar.scss"
 import { useTheme } from "@mui/material"
+import { useStyleContext } from "../../../components/providers/style-provider"
 
 interface RightSidebarProps {
   isVisible: boolean
   toggleSidebar: () => void
-  primaryColor: string
-  setPrimaryColor: (color: string) => void
-  theme: "light" | "dark"
-  setTheme: (mode: "light" | "dark") => void
 }
 
 export const RightSidebar = ({
   isVisible,
   toggleSidebar,
-  primaryColor,
-  setPrimaryColor,
-  theme,
-  setTheme,
 }: RightSidebarProps) => {
+  const { primaryColor, setPrimaryColor } = useStyleContext()
   const muiTheme = useTheme()
-  const predefinedColors = ["#f0650f", "#007bff", "#28a745", "#6f42c1"]
+
+  const predefinedColors = ["#DB5D0F", "#007bff", "#28a745", "#6f42c1"]
 
   return (
     <div
@@ -37,10 +32,10 @@ export const RightSidebar = ({
       <div className="neon-divider" />
 
       <h3>Theme</h3>
-      <ThemeToggle theme={theme} handleSetTheme={setTheme} />
+      <ThemeToggle />
 
       <h3>Primary Color</h3>
-      <ColorPickers
+      <ColorPicker
         primaryColor={primaryColor}
         predefinedColors={predefinedColors}
         handleSetPrimaryColor={setPrimaryColor}

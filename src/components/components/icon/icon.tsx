@@ -1,5 +1,4 @@
-import { useTheme } from "@mui/material"
-import { isDarkColor } from "../../../utils/common/utils"
+import { useOnPrimaryColor } from "../../../hooks/useThemeHelpers"
 
 interface IconComponentProps {
   name: string
@@ -45,11 +44,9 @@ export const IconComponent = ({
   backgroundColor,
   className,
 }: IconComponentProps) => {
-  const theme = useTheme()
-  const bg = backgroundColor || theme.palette.primary.main
-  const iconColor = color || (isDarkColor(bg) ? "#fff" : "#222")
-
+  const onPrimaryColor = useOnPrimaryColor()
   const icon = icons[name]
+
   if (!icon) return null
 
   return (
@@ -57,7 +54,7 @@ export const IconComponent = ({
       width={`${size}px`}
       height={`${size}px`}
       viewBox={icon.viewBox}
-      fill={iconColor}
+      fill={onPrimaryColor}
       className={`app-icon${className ? " " + className : ""}`}
       xmlns="http://www.w3.org/2000/svg"
     >

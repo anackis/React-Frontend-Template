@@ -1,5 +1,5 @@
-import { IconComponent } from "../icon/icon";
-import "./spinner.scss";
+import { IconComponent } from "../icon/icon"
+import "./spinner.scss"
 
 export const Spinner = () => {
   return (
@@ -11,7 +11,7 @@ export const Spinner = () => {
         alignItems: "center",
       }}
     >
-      <IconComponent name="spinner" size={64} color="#F0650F" />
+      <IconComponent name="spinner" size={64} color="#DB5D0F" />
     </div>
-  );
-};
+  )
+}

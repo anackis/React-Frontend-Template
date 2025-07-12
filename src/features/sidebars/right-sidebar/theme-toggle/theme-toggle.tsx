@@ -1,22 +1,19 @@
 import { useTheme } from "@mui/material"
 import { IconComponent } from "../../../../components/components/icon/icon"
 import "./theme-toggle.scss"
+import { useStyleContext } from "../../../../components/providers/style-provider"
 
-interface ThemeToggleProps {
-  theme: "dark" | "light"
-  handleSetTheme: (theme: "dark" | "light") => void
-}
-
-export const ThemeToggle = ({ theme, handleSetTheme }: ThemeToggleProps) => {
+export const ThemeToggle = () => {
+  const { themeMode, setThemeMode } = useStyleContext()
   const muiTheme = useTheme()
   const backgroundColor = muiTheme.palette.toggleBackground
 
   return (
     <div className="theme-toggle-switch">
       <button
-        className={`theme-switch ${theme}`}
+        className={`theme-switch ${themeMode}`}
         style={{ backgroundColor }}
-        onClick={() => handleSetTheme(theme === "dark" ? "light" : "dark")}
+        onClick={() => setThemeMode(themeMode === "dark" ? "light" : "dark")}
       >
         <div className="toggle-indicator">
           <IconComponent name="sun" size={20} className="theme-icon sun-icon" />
