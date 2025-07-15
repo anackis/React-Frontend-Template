@@ -18,11 +18,11 @@ export const ColorPicker = ({
       {predefinedColors.map((color) => (
         <div
           key={color}
-          className="color-swatch-wrapper"
+          className="color-switch-wrapper"
           style={{ borderColor: primaryColor }}
         >
           <button
-            className={`color-swatch ${primaryColor === color ? "active" : ""}`}
+            className={`color-switch ${primaryColor === color ? "active" : ""}`}
             style={{ backgroundColor: color }}
             onClick={() => handleSetPrimaryColor(color)}
           />
@@ -30,11 +30,11 @@ export const ColorPicker = ({
       ))}
 
       <div
-        className="color-swatch-wrapper"
+        className="color-switch-wrapper"
         style={{ borderColor: primaryColor }}
       >
         <div
-          className={`color-swatch custom-picker ${
+          className={`color-switch custom-picker ${
             predefinedColors.includes(primaryColor) ? "" : "active"
           }`}
           style={{ backgroundColor: primaryColor }}

@@ -1,3 +1,5 @@
+@import "../../../../styles/mixins/mixins.scss";
+
 .theme-switch {
   position: relative;
   width: 67px;
@@ -13,8 +15,7 @@
   overflow: hidden;
 
   &:hover {
-    box-shadow: 0 0 2px #fff, 0 0 4px var(--primary-color),
-      0 0 5px var(--primary-color), 0 0 6px var(--primary-color);
+    @include mainColorBoxShadow();
   }
 
   .toggle-indicator {

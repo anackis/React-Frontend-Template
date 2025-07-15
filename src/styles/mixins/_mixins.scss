@@ -28,3 +28,7 @@
   border: none;
   padding: $padding;
 }
+
+@mixin mainColorBoxShadow($color: var(--primary-color)) {
+  box-shadow: 0 0 2px #fff, 0 0 4px #{$color}, 0 0 5px #{$color};
+}

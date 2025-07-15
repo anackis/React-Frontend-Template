@@ -37,25 +37,33 @@ export const getAppTheme = (
       MuiButton: {
         styleOverrides: {
           root: {
-            letterSpacing: "1.5px",
+            letterSpacing: "2px",
             borderRadius: 8,
+          },
+          contained: ({ theme }) => ({
             "&:hover": {
               backgroundColor: primaryColor,
               boxShadow:
-                "0 0 2px var(--primary-color), 0 0 7px var(--primary-color)",
+                "0 0 2px #fff, 0 0 3px var(--primary-color), 0 0 4px var(--primary-color), 0 0 5px var(--primary-color)",
             },
-          },
+          }),
           outlined: ({ theme }) => ({
             borderWidth: 2,
             ...(theme.palette.mode === "dark" && {
               borderColor: "#888",
               color: "#fff",
-              borderWidth: 2,
               "&:hover": {
                 backgroundColor: "rgba(255,255,255,0.08)",
                 borderColor: theme.palette.primary.main,
                 boxShadow:
-                  "0 0 3px var(--primary-color), 0 0 7px var(--primary-color)",
+                  "0 0 2px #fff, 0 0 3px var(--primary-color), 0 0 4px var(--primary-color), 0 0 5px var(--primary-color)",
+              },
+            }),
+            ...(theme.palette.mode === "light" && {
+              "&:hover": {
+                borderColor: "#E49292",
+                boxShadow:
+                  "0 0 2px #fff, 0 0 3px #E49292, 0 0 4px #E49292, 0 0 5px #E49292",
               },
             }),
           }),
