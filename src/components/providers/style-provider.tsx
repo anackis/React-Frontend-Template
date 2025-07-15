@@ -1,5 +1,10 @@
 import React, { createContext, useContext, useEffect, useState } from "react"
-import { colorSimilarity, darken, lighten } from "../../utils/common/utils"
+import {
+  colorSimilarity,
+  darken,
+  getOnPrimaryColor,
+  lighten,
+} from "../../utils/common/utils"
 
 interface StyleContextProps {
   primaryColor: string
@@ -22,6 +27,14 @@ export function StyleProvider({ children }: TStyleProviderProps) {
   const [colorError, setColorError] = useState("")
 
   const SIMILARITY_THRESHOLD = 0.08
+
+  useEffect(() => {
+    document.body.style.setProperty("--primary-color", primaryColor)
+    document.body.style.setProperty(
+      "--on-primary-color",
+      getOnPrimaryColor(primaryColor)
+    )
+  }, [primaryColor])
 
   const setPrimaryColor = (color: string) => {
     const background = themeMode === "dark" ? "#262626" : "#F5F5F5"
@@ -63,13 +76,7 @@ export function StyleProvider({ children }: TStyleProviderProps) {
         setColorError,
       }}
     >
-      <div
-        style={{
-          ["--primary-color" as any]: primaryColor,
-        }}
-      >
-        {children}
-      </div>
+      {children}
     </StyleContext.Provider>
   )
 }

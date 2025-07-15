@@ -6,37 +6,35 @@
   p {
     line-height: 20px;
     letter-spacing: 0.5px;
-    margin: 20px 0 30px;
+    margin: 10px 0 20px;
   }
-
   button {
-    border: 1px solid #db5d0f;
-    background-color: #db5d0f;
-    color: #ffffff;
+    border: 1px solid var(--primary-color);
+    background-color: var(--primary-color);
+    color: var(--on-primary-color);
     font-weight: bold;
     padding: 12px 45px;
     letter-spacing: 1px;
     text-transform: uppercase;
     transition: transform 80ms ease-in;
   }
-
   button:hover {
-    box-shadow: 0 0 10px #db5d0f, 0 0 10px #db5d0f;
+    box-shadow: 0 0 2px var(--primary-color), 0 0 4px var(--primary-color);
   }
-
   button:active {
-    transform: scale(0.95);
+    transform: scale(0.98);
   }
-
   button:focus {
     outline: none;
   }
-
   button.ghost {
+    transition: all 0.09s ease-in-out;
     background-color: transparent;
-    border-color: #ffffff;
+    border-color: var(--on-primary-color);
   }
-
+  button.ghost:hover {
+    scale: 1.01;
+  }
   form {
     @include flexCenter;
     background-color: var(--background-primary-color);
@@ -44,7 +42,6 @@
     padding: 0 50px;
     height: 100%;
   }
-
   input {
     border-radius: 8px;
     border: none;
@@ -56,13 +53,13 @@
     outline: none;
     border: none;
     border: 0px solid #000;
-    box-shadow: 0 0 10px #db5d0f, 0 0 10px #db5d0f;
+    box-shadow: 0 0 5px var(--primary-color), 0 0 5px var(--primary-color);
   }
   input:focus {
     outline: none;
     border: none;
     border: 0px solid #000;
-    box-shadow: 0 0 10px #db5d0f, 0 0 10px #db5d0f, 0 0 15px #db5d0f;
+    box-shadow: 0 0 7px var(--primary-color), 0 0 7px var(--primary-color);
   }
 
   .login-component-container {
@@ -76,31 +73,26 @@
     max-width: 100%;
     min-height: 480px;
   }
-
   .form-container {
     position: absolute;
     top: 0;
     height: 100%;
     transition: all 0.6s ease-in-out;
   }
-
   .sign-in-container {
     left: 0;
     width: 50%;
     z-index: 2;
   }
-
   .login-component-container.right-panel-active .sign-in-container {
     transform: translateX(100%);
   }
-
   .sign-up-container {
     left: 0;
     width: 50%;
     opacity: 0;
     z-index: 1;
   }
-
   .login-component-container.right-panel-active .sign-up-container {
     transform: translateX(100%);
     opacity: 1;
@@ -132,19 +124,10 @@
     transition: transform 0.6s ease-in-out;
     z-index: 100;
   }
-
   .login-component-container.right-panel-active .overlay-container {
     transform: translateX(-100%);
   }
-
   .overlay {
-    // background: linear-gradient(
-    //   315deg,
-    //   rgba(255, 162, 0, 1) 0%,
-    //   rgba(235, 83, 14, 1) 31%,
-    //   rgba(231, 68, 13, 1) 77%,
-    //   rgba(214, 0, 8, 1) 100%
-    // );
     background: linear-gradient(
       315deg,
       var(--gradient-light, #b34700) 0%,
@@ -160,11 +143,9 @@
     transform: translateX(0);
     transition: transform 0.6s ease-in-out;
   }
-
   .login-component-container.right-panel-active .overlay {
     transform: translateX(50%);
   }
-
   .overlay-panel {
     @include flexCenter;
     position: absolute;
@@ -176,20 +157,16 @@
     transform: translateX(0);
     transition: transform 0.6s ease-in-out;
   }
-
   .overlay-left {
     transform: translateX(-20%);
   }
-
   .login-component-container.right-panel-active .overlay-left {
     transform: translateX(0);
   }
-
   .overlay-right {
     right: 0;
     transform: translateX(0);
   }
-
   .login-component-container.right-panel-active .overlay-right {
     transform: translateX(20%);
   }
@@ -197,27 +174,44 @@
   // Login Notification
   .login-notification {
     background-color: var(--background-secondary-color);
-    border-radius: 14px;
-    padding: 20px;
+    border-radius: 16px;
+    padding: 8px;
+    color: #fff;
+  }
+  .login-notification-buttons {
+    display: flex;
+    margin-top: 10px;
+    justify-content: space-around;
   }
   .login-notification-wrapper {
     background-color: var(--background-primary-color);
     padding: 20px 60px;
     border-radius: 12px;
-    a {
-      color: #fff;
-      text-align: center;
+    a.button {
       display: block;
-      margin-top: 20px;
+      text-decoration: none;
+      border: 1px solid #fff;
+      color: #fff;
+      font-weight: bold;
+      padding: 12px 45px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      background-color: transparent;
+      transition: all 0.1s ease-in-out;
+    }
+    a.button {
+      &:hover {
+        border: 1px solid var(--primary-color);
+        color: var(--primary-color);
+      }
+      &:active {
+        transform: scale(0.98);
+      }
     }
     span {
       display: block;
       text-align: center;
       margin: 15px 0;
-    }
-    button {
-      display: block;
-      margin: 0 auto;
     }
   }
 }

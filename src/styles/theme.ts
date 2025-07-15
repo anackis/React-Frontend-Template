@@ -37,7 +37,13 @@ export const getAppTheme = (
       MuiButton: {
         styleOverrides: {
           root: {
+            letterSpacing: "1.5px",
             borderRadius: 8,
+            "&:hover": {
+              backgroundColor: primaryColor,
+              boxShadow:
+                "0 0 2px var(--primary-color), 0 0 7px var(--primary-color)",
+            },
           },
           outlined: ({ theme }) => ({
             borderWidth: 2,
@@ -48,6 +54,8 @@ export const getAppTheme = (
               "&:hover": {
                 backgroundColor: "rgba(255,255,255,0.08)",
                 borderColor: theme.palette.primary.main,
+                boxShadow:
+                  "0 0 3px var(--primary-color), 0 0 7px var(--primary-color)",
               },
             }),
           }),

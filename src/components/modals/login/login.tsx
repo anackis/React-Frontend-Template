@@ -37,19 +37,15 @@ export function LoginComponenet() {
       <div className="login-component">
         <div className="login-notification">
           <div className="login-notification-wrapper">
-            <h1>You are logged in.</h1>
-            <NavLink
-              className={({ isActive }) =>
-                isActive ? "navbar-link active" : "navbar-link"
-              }
-              to="/"
-            >
-              Home Page
-            </NavLink>
-            <span>Or</span>
-            <button className="button" onClick={() => handleLogout(setError)}>
-              Logout
-            </button>
+            <h1>You are already logged in</h1>
+            <div className="login-notification-buttons">
+              <button className="button" onClick={() => handleLogout(setError)}>
+                Logout
+              </button>
+              <NavLink className="button ghost" to="/">
+                Home
+              </NavLink>
+            </div>
           </div>
         </div>
       </div>
@@ -80,7 +76,7 @@ export function LoginComponenet() {
                 handleSignUp(e, email, password, setError, navigate)
               }
             >
-              <h1>Create Account</h1>
+              <h1 style={{ color: "#fff" }}>Create Account</h1>
 
               <input
                 type="email"
@@ -96,7 +92,11 @@ export function LoginComponenet() {
                 onChange={(e) => setPassword(e.target.value)}
               />
 
-              <button className="button" type="submit">
+              <button
+                className="button"
+                type="submit"
+                style={{ marginTop: "6px", color: onPrimaryColor }}
+              >
                 Sign Up
               </button>
             </form>
@@ -107,7 +107,7 @@ export function LoginComponenet() {
                 handleSignIn(e, email, password, setError, navigate)
               }
             >
-              <h1>Sign in</h1>
+              <h1 style={{ color: "#fff" }}>Sign in</h1>
 
               <input
                 type="email"
@@ -130,6 +130,7 @@ export function LoginComponenet() {
                   backgroundColor: mainColor,
                   borderColor: mainColor,
                   color: onPrimaryColor,
+                  marginTop: "6px",
                 }}
               >
                 Sign In
@@ -143,7 +144,7 @@ export function LoginComponenet() {
                 style={{ color: onPrimaryColor }}
               >
                 <h1>Sign In</h1>
-                <p>Please, login to use the app.</p>
+                <p>Please, login to use the app</p>
 
                 <button
                   className="button ghost"
@@ -159,7 +160,9 @@ export function LoginComponenet() {
                 style={{ color: onPrimaryColor }}
               >
                 <h1>Sign Up</h1>
-                <p>Create an account to start the journey with us.</p>
+                <p>
+                  Create an account to start <br /> the journey with us
+                </p>
 
                 <button
                   className="button ghost"

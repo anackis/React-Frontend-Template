@@ -39,7 +39,7 @@ export const ErrorComponent = ({
         sx={{ display: "flex", alignItems: "center", gap: 1 }}
       >
         <ErrorOutlineIcon color="error" />
-        <strong>Error !</strong>
+        <strong>Error!</strong>
       </DialogTitle>
       <DialogContent>
         <strong>{message}</strong>
@@ -50,7 +50,12 @@ export const ErrorComponent = ({
             Retry
           </Button>
         )}
-        <Button variant="outlined" color="error" onClick={handleClose}>
+        <Button
+          variant="outlined"
+          color="error"
+          onClick={handleClose}
+          style={{ marginLeft: "10px" }}
+        >
           Close
         </Button>
       </DialogActions>
