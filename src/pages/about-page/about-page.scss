@@ -1,26 +1,26 @@
-@import "../../styles/mixins/mixins";
+// @import "../../styles/mixins/mixins";
 
-.about {
-  @include absoluteCenter;
-  width: 50vw;
-  background-color: var(--background-secondary-color);
-  border-radius: 14px;
-  padding: 20px;
-  &-wrapper {
-    background-color: var(--background-primary-color);
-    padding: 20px;
-    border-radius: 12px;
-  }
-  h1 {
-    text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 1px var(--primary-color),
-      0 0 5px var(--primary-color), 0 0 10px var(--primary-color),
-      0 0 15px var(--primary-color);
-  }
-  h2,
-  h3 {
-    text-shadow: 0 0 5px var(--primary-color), 0 0 15px var(--primary-color);
-  }
-  p {
-    font-size: 18px;
-  }
-}
+// .about {
+//   @include absoluteCenter;
+//   width: 50vw;
+//   background-color: var(--background-secondary-color);
+//   border-radius: 14px;
+//   padding: 20px;
+//   &-wrapper {
+//     background-color: var(--background-primary-color);
+//     padding: 20px;
+//     border-radius: 12px;
+//   }
+//   h1 {
+//     text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 1px var(--primary-color),
+//       0 0 5px var(--primary-color), 0 0 10px var(--primary-color),
+//       0 0 15px var(--primary-color);
+//   }
+//   h2,
+//   h3 {
+//     text-shadow: 0 0 5px var(--primary-color), 0 0 15px var(--primary-color);
+//   }
+//   p {
+//     font-size: 18px;
+//   }
+// }

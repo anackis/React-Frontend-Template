@@ -1,3 +1,5 @@
+@import "../../../../styles/mixins/mixins";
+
 .color-options {
   display: flex;
   justify-content: space-around;
@@ -6,18 +8,22 @@
   flex-wrap: wrap;
 }
 
-.color-swatch-wrapper {
+.color-switch-wrapper {
   height: 41px;
   width: 41px;
   border: 2px solid transparent;
   border-radius: 6px;
-  transition: border-color 0.3s ease;
+  transition: border-color 0.3s ease-in-out;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.color-swatch {
+.color-switch-wrapper:has(.color-switch:hover) {
+  @include mainColorBoxShadow();
+}
+
+.color-switch {
   width: 25px;
   height: 25px;
   border-radius: 4px;

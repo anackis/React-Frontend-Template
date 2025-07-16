@@ -1,9 +1,9 @@
-import { NavLink, useNavigate } from "react-router-dom";
-import "./navbar.scss";
+import { NavLink, useNavigate } from "react-router-dom"
+import "./navbar.scss"
 // import logo from '../../assets/icons/web-art.svg';
 
 export const Navbar = () => {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   return (
     <nav className="navbar">
@@ -43,5 +43,5 @@ export const Navbar = () => {
         </div>
       </div>
     </nav>
-  );
-};
+  )
+}

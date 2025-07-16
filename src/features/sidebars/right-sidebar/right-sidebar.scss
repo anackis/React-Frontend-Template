@@ -7,9 +7,7 @@
   top: 0;
   right: 0;
   bottom: 0;
-  background-color: var(--background-primary-color);
-  transition: transform 0.3s ease;
-  border-left: 2px solid var(--background-secondary-color);
+  transition: all 0.5s ease-in-out;
   z-index: 100;
 
   &.hidden {
@@ -21,8 +19,6 @@
     border: none;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
-    background-color: var(--primary-color);
-    color: red;
     position: absolute;
     top: 100px;
     left: -42px;
@@ -36,7 +32,7 @@
   }
 
   .right-sidebar-toggle-button:hover {
-    box-shadow: 0 0 10px var(--primary-color);
+    box-shadow: 0 0 8px var(--primary-color);
   }
 
   .right-sidebar-toggle-button:active {
@@ -59,7 +55,7 @@
       0 0 12px var(--primary-color);
     border-radius: 1px;
     margin: 10px 0 25px 0;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   }
 
   .theme-toggle-switch {

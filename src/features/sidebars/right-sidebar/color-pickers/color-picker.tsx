@@ -1,27 +1,28 @@
 import { IconComponent } from "../../../../components/components/icon/icon"
-import "./color-pickers.scss"
+import "./color-picker.scss"
 
-interface ColorPickersProps {
+interface ColorPickerProps {
   primaryColor: string
   predefinedColors: string[]
   handleSetPrimaryColor: (color: string) => void
+  colorError?: string
 }
 
-export const ColorPickers = ({
+export const ColorPicker = ({
   primaryColor,
   predefinedColors,
   handleSetPrimaryColor,
-}: ColorPickersProps) => {
+}: ColorPickerProps) => {
   return (
     <div className="color-options">
       {predefinedColors.map((color) => (
         <div
           key={color}
-          className="color-swatch-wrapper"
+          className="color-switch-wrapper"
           style={{ borderColor: primaryColor }}
         >
           <button
-            className={`color-swatch ${primaryColor === color ? "active" : ""}`}
+            className={`color-switch ${primaryColor === color ? "active" : ""}`}
             style={{ backgroundColor: color }}
             onClick={() => handleSetPrimaryColor(color)}
           />
@@ -29,11 +30,11 @@ export const ColorPickers = ({
       ))}
 
       <div
-        className="color-swatch-wrapper"
+        className="color-switch-wrapper"
         style={{ borderColor: primaryColor }}
       >
         <div
-          className={`color-swatch custom-picker ${
+          className={`color-switch custom-picker ${
             predefinedColors.includes(primaryColor) ? "" : "active"
           }`}
           style={{ backgroundColor: primaryColor }}
@@ -44,11 +45,7 @@ export const ColorPickers = ({
             onChange={(e) => handleSetPrimaryColor(e.target.value)}
           />
           <span className="edit-icon">
-            <IconComponent
-              name="pencil"
-              size={14}
-              color="var(--secondary-color)"
-            />
+            <IconComponent name="pencil" size={14} />
           </span>
         </div>
       </div>
