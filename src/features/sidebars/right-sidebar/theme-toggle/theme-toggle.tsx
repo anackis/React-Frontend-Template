@@ -1,7 +1,8 @@
+import "./theme-toggle.scss"
+
 import { useTheme } from "@mui/material"
 import { IconComponent } from "../../../../components/components/icon/icon"
-import "./theme-toggle.scss"
-import { useStyleContext } from "../../../../components/providers/style-provider"
+import { useStyleContext } from "../../../../providers/style-provider"
 
 export const ThemeToggle = () => {
   const { themeMode, setThemeMode } = useStyleContext()

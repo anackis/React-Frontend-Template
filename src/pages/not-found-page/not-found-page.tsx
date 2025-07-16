@@ -1,5 +1,5 @@
-import { NavLink } from "react-router-dom";
-import "./not-found-page.scss";
+import "./not-found-page.scss"
+import { NavLink } from "react-router-dom"
 
 export const NotFoundPage = () => {
   return (
@@ -9,7 +9,6 @@ export const NotFoundPage = () => {
           <h1>404</h1>
           <h2>Page not Found.</h2>
           <span>Return to a Home Page</span>
-
           <NavLink
             className={({ isActive }) =>
               isActive ? "navbar-link active" : "navbar-link"
@@ -21,5 +20,5 @@ export const NotFoundPage = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

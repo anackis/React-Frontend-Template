@@ -1,7 +1,7 @@
-@import "../../styles/mixins/mixins";
+@use "../../styles/mixins/mixins" as mixins;
 
 .not-found-page-component {
-  @include absoluteCenter;
+  @include mixins.absoluteCenter;
   text-align: center;
   .not-found-page-notification {
     background-color: var(--background-secondary-color);

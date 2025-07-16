@@ -1,4 +1,4 @@
-@import "../../styles/mixins/mixins";
+@use "../../styles/mixins/mixins" as mixins;
 
 .navbar {
   position: fixed;
@@ -19,11 +19,12 @@
     padding: 0 20px;
   }
   .navbar-brand {
-    @include flexCenter;
+    @include mixins.flexCenter;
     cursor: pointer;
     font-weight: bold;
     margin-right: 20px;
     transition: all 0.3s ease-in-out;
+    color: #fff;
     img {
       height: 30px;
       margin-right: 3px;

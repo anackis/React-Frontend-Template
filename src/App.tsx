@@ -10,7 +10,7 @@ import { RightSidebar } from "./features/sidebars/right-sidebar/right-sidebar"
 import { getAppTheme } from "./styles/theme"
 import { ThemeProvider } from "@mui/material/styles"
 import CssBaseline from "@mui/material/CssBaseline"
-import { useStyleContext } from "./components/providers/style-provider"
+import { useStyleContext } from "./providers/style-provider"
 import { Alert, Snackbar } from "@mui/material"
 
 export function App() {

@@ -1,4 +1,4 @@
-@import "../../../styles/mixins/mixins.scss";
+@use "../../../styles/mixins/mixins.scss" as mixins;
 
 .sidebar {
   padding-top: 100px;
@@ -16,7 +16,7 @@
   }
 
   .sidebar-toggle-button {
-    @include flexCenter;
+    @include mixins.flexCenter;
     border: none;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;

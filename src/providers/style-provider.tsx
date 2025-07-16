@@ -4,7 +4,7 @@ import {
   darken,
   getOnPrimaryColor,
   lighten,
-} from "../../utils/common/utils"
+} from "../utils/common/utils"
 
 interface StyleContextProps {
   primaryColor: string

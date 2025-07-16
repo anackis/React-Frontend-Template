@@ -1,7 +1,7 @@
-@import "../../../styles/mixins/mixins";
+@use "../../../styles/mixins/mixins" as mixins;
 
 .login-component {
-  @include absoluteCenter;
+  @include mixins.absoluteCenter;
 
   p {
     line-height: 20px;
@@ -19,8 +19,7 @@
     transition: transform 80ms ease-in;
   }
   button:hover {
-    // box-shadow: 0 0 2px var(--primary-color), 0 0 4px var(--primary-color);
-    @include mainColorBoxShadow();
+    @include mixins.mainColorBoxShadow();
   }
   button:active {
     transform: scale(0.98);
@@ -38,7 +37,7 @@
     scale: 1.01;
   }
   form {
-    @include flexCenter;
+    @include mixins.flexCenter;
     background-color: var(--background-primary-color);
     flex-direction: column;
     padding: 0 50px;
@@ -149,7 +148,7 @@
     transform: translateX(50%);
   }
   .overlay-panel {
-    @include flexCenter;
+    @include mixins.flexCenter;
     position: absolute;
     flex-direction: column;
     text-align: center;
@@ -204,7 +203,7 @@
     a.button {
       &:hover {
         border: 2px solid var(--primary-color);
-        @include mainColorBoxShadow();
+        @include mixins.mainColorBoxShadow();
       }
       &:active {
         transform: scale(0.98);

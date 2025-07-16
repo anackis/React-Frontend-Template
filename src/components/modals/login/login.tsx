@@ -1,13 +1,15 @@
-import { useState } from "react"
+import "./login.scss"
+
 import { useFirebaseAuth } from "../../../hooks/firebase-hooks/useFirebaseAuth"
-import { NavLink, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { Spinner } from "../../components/spinner/spinner"
 import { ErrorComponent } from "../error/error"
 import { useTheme } from "@mui/material"
-import "./login.scss"
 import { darken, lighten } from "../../../utils/common/utils"
 import { useOnPrimaryColor } from "../../../hooks/useThemeHelpers"
-import { handleLogout, handleSignIn, handleSignUp } from "./login-handlers"
+import { handleSignIn, handleSignUp } from "./login-handlers"
+import { useState } from "react"
+import { AlreadyLoggedInNotification } from "./already-logged-in"
 
 export function LoginComponenet() {
   const { currentUser, loading } = useFirebaseAuth()
@@ -33,23 +35,7 @@ export function LoginComponenet() {
   }
 
   if (currentUser) {
-    return (
-      <div className="login-component">
-        <div className="login-notification">
-          <div className="login-notification-wrapper">
-            <h1>You are already logged in</h1>
-            <div className="login-notification-buttons">
-              <button className="button" onClick={() => handleLogout(setError)}>
-                Logout
-              </button>
-              <NavLink className="button ghost" to="/">
-                Home
-              </NavLink>
-            </div>
-          </div>
-        </div>
-      </div>
-    )
+    return <AlreadyLoggedInNotification setError={setError} />
   }
 
   return (

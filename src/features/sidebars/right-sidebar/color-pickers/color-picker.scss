@@ -1,4 +1,4 @@
-@import "../../../../styles/mixins/mixins";
+@use "../../../../styles/mixins/mixins" as mixins;
 
 .color-options {
   display: flex;
@@ -20,7 +20,7 @@
 }
 
 .color-switch-wrapper:has(.color-switch:hover) {
-  @include mainColorBoxShadow();
+  @include mixins.mainColorBoxShadow();
 }
 
 .color-switch {

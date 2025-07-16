@@ -1,6 +1,7 @@
+import "./left-sidebar.scss"
+
 import { useTheme } from "@mui/material"
 import { IconComponent } from "../../../components/components/icon/icon"
-import "./left-sidebar.scss"
 
 interface SidebarProps {
   isVisible: boolean

@@ -1,5 +1,5 @@
-import { IconComponent } from "../icon/icon"
 import "./spinner.scss"
+import { IconComponent } from "../icon/icon"
 
 export const Spinner = () => {
   return (

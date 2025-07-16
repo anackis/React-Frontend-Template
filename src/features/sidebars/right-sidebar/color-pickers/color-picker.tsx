@@ -1,5 +1,6 @@
-import { IconComponent } from "../../../../components/components/icon/icon"
 import "./color-picker.scss"
+
+import { IconComponent } from "../../../../components/components/icon/icon"
 
 interface ColorPickerProps {
   primaryColor: string

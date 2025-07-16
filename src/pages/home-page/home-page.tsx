@@ -1,9 +1,8 @@
 import { useState } from "react"
 import { ErrorComponent } from "../../components/modals/error/error"
-import "./home-page.scss"
 
 export function Home() {
-  const [openModal, setOpenModal] = useState(true)
+  const [openModal, setOpenModal] = useState(false)
 
   return (
     <main className="home-page">
@@ -14,7 +13,7 @@ export function Home() {
       <br />
       <br />
       <br />
-      <button onClick={() => setOpenModal(true)}>Hello</button>
+      <button onClick={() => setOpenModal(true)}>Error</button>
 
       {openModal && (
         <ErrorComponent

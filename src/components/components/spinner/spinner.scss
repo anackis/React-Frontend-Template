@@ -1,7 +1,7 @@
-@import "../../../styles/mixins/mixins.scss";
+@use "../../../styles/mixins/mixins.scss" as mixins;
 
 .spinner {
-  @include flexCenter;
+  @include mixins.flexCenter;
 }
 
 .spinner svg {

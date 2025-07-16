@@ -1,9 +1,10 @@
+import "./right-sidebar.scss"
+
 import { IconComponent } from "../../../components/components/icon/icon"
 import { ThemeToggle } from "./theme-toggle/theme-toggle"
 import { ColorPicker } from "./color-pickers/color-picker"
-import "./right-sidebar.scss"
 import { useTheme } from "@mui/material"
-import { useStyleContext } from "../../../components/providers/style-provider"
+import { useStyleContext } from "../../../providers/style-provider"
 
 interface RightSidebarProps {
   isVisible: boolean
