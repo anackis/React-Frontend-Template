@@ -5,6 +5,11 @@ import {
   getOnPrimaryColor,
   lighten,
 } from "../utils/common/utils"
+import { useFirebaseAuth } from "../hooks/firebase-hooks/useFirebaseAuth"
+import {
+  getUserSettings,
+  setUserSettings,
+} from "../firebase/services/userSettings"
 
 interface StyleContextProps {
   primaryColor: string
@@ -22,11 +27,39 @@ interface TStyleProviderProps {
 }
 
 export function StyleProvider({ children }: TStyleProviderProps) {
+  const { currentUser } = useFirebaseAuth()
   const [primaryColor, _setPrimaryColor] = useState("#DB5D0F")
   const [themeMode, _setThemeMode] = useState<"light" | "dark">("dark")
   const [colorError, setColorError] = useState("")
 
   const SIMILARITY_THRESHOLD = 0.08
+
+  useEffect(() => {
+    if (currentUser) {
+      // Only fetch and save settings if logged in
+      getUserSettings(currentUser.uid).then((settings) => {
+        if (settings) {
+          if (settings.primaryColor) _setPrimaryColor(settings.primaryColor)
+          if (settings.themeMode) _setThemeMode(settings.themeMode)
+        } else {
+          const defaultPrimary = "#DB5D0F"
+          const defaultTheme = "dark"
+          _setPrimaryColor(defaultPrimary)
+          _setThemeMode(defaultTheme)
+          setUserSettings(currentUser.uid, {
+            primaryColor: defaultPrimary,
+            themeMode: defaultTheme,
+          })
+        }
+      })
+    } else {
+      // Not logged in: use defaults, do not call Firestore
+      _setPrimaryColor("#DB5D0F")
+      _setThemeMode("dark")
+      setColorError("")
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentUser])
 
   useEffect(() => {
     document.body.style.setProperty("--primary-color", primaryColor)
@@ -50,6 +83,9 @@ export function StyleProvider({ children }: TStyleProviderProps) {
       _setPrimaryColor(color)
       setColorError("")
     }
+    if (currentUser) {
+      setUserSettings(currentUser.uid, { primaryColor: color })
+    }
   }
 
   const setThemeMode = (mode: "light" | "dark") => {
@@ -63,6 +99,9 @@ export function StyleProvider({ children }: TStyleProviderProps) {
       )
     }
     _setThemeMode(mode)
+    if (currentUser) {
+      setUserSettings(currentUser.uid, { themeMode: mode })
+    }
   }
 
   return (
