@@ -20,7 +20,7 @@
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
     position: absolute;
-    top: 100px;
+    top: 85px;
     left: -42px;
     height: 40px;
     width: 40px;
@@ -32,13 +32,11 @@
   }
 
   .right-sidebar-toggle-button:hover {
-    box-shadow: 0 0 8px var(--primary-color);
+    @include mixins.mainColorBoxShadow;
   }
-
   .right-sidebar-toggle-button:active {
-    transform: scale(0.95);
+    box-shadow: none;
   }
-
   .right-sidebar-toggle-button:focus {
     outline: none;
   }

@@ -1,8 +1,6 @@
 :root {
   --background-primary-color: #262626;
   --background-secondary-color: #3c3c3c;
-  --background-third-color: #333;
-  --text-color: #fff;
 }
 
 * {
@@ -15,8 +13,8 @@ body,
 html {
   height: 100%;
   font-family: "Roboto", sans-serif;
-  background: var(--background-third-color);
-  color: var(--text-color);
+  background: #333;
+  color: #fff;
   letter-spacing: 0.00938em;
   transition: background-color 0.5s ease-in-out;
 }
@@ -27,8 +25,14 @@ html {
 
 .container {
   width: 90%;
-  margin: 0 auto;
   max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+.full-width-container {
+  height: 100%;
+  width: 100%;
+  padding: 20px 60px;
 }
 
 a {

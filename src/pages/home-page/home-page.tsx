@@ -5,7 +5,7 @@ export function Home() {
   const [openModal, setOpenModal] = useState(false)
 
   return (
-    <main className="home-page">
+    <main className="home-page full-width-container">
       <h1>Hello Home</h1>
       <br />
       <br />

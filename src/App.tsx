@@ -12,6 +12,8 @@ import { ThemeProvider } from "@mui/material/styles"
 import CssBaseline from "@mui/material/CssBaseline"
 import { useStyleContext } from "./providers/style-provider"
 import { Alert, Snackbar } from "@mui/material"
+import { IconShowcase } from "./components/components/icon/iconShowcase"
+import { AccountSettingsPage } from "./pages/account-page/account-page"
 
 export function App() {
   const [isLeftSidebarVisible, setLeftSidebarVisible] = useState(true)
@@ -31,7 +33,7 @@ export function App() {
     <>
       <ThemeProvider theme={muiTheme}>
         <CssBaseline />
-        <Navbar />
+        <Navbar toggleSidebar={toggleRightSidebar} />
 
         <LeftSidebar
           isVisible={isLeftSidebarVisible}
@@ -53,6 +55,10 @@ export function App() {
             <Route path="/about" element={<About />} />
 
             <Route path="/login" element={<Login />} />
+
+            <Route path="/account-settings" element={<AccountSettingsPage />} />
+
+            <Route path="/icons" element={<IconShowcase />} />
 
             <Route path="*" element={<NotFoundPage />} />
           </Routes>

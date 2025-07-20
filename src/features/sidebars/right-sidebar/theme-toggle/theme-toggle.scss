@@ -17,6 +17,9 @@
   &:hover {
     @include mixins.mainColorBoxShadow();
   }
+  &:active {
+    box-shadow: none;
+  }
 
   .toggle-indicator {
     position: absolute;
@@ -26,7 +29,7 @@
     background-color: var(--primary-color);
     border-radius: 50%;
     z-index: 1;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s;
 
     display: flex;
     align-items: center;

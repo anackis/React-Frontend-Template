@@ -36,7 +36,6 @@ export function StyleProvider({ children }: TStyleProviderProps) {
 
   useEffect(() => {
     if (currentUser) {
-      // Only fetch and save settings if logged in
       getUserSettings(currentUser.uid).then((settings) => {
         if (settings) {
           if (settings.primaryColor) _setPrimaryColor(settings.primaryColor)
@@ -53,7 +52,6 @@ export function StyleProvider({ children }: TStyleProviderProps) {
         }
       })
     } else {
-      // Not logged in: use defaults, do not call Firestore
       _setPrimaryColor("#DB5D0F")
       _setThemeMode("dark")
       setColorError("")

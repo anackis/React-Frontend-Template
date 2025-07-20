@@ -62,7 +62,7 @@ export function LoginComponenet() {
                 handleSignUp(e, email, password, setError, navigate)
               }
             >
-              <h1 style={{ color: "#fff" }}>Create Account</h1>
+              <h1>Create Account</h1>
 
               <input
                 type="email"

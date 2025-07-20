@@ -7,9 +7,7 @@
   left: 0;
   top: 0;
   bottom: 0;
-  // background-color: var(--background-primary-color);
   transition: all 0.5s ease-in-out;
-  // border-right: 2px solid var(--background-secondary-color);
 
   &.hidden {
     transform: translateX(-100%);
@@ -23,7 +21,7 @@
     background-color: var(--primary-color);
     color: red;
     position: absolute;
-    top: 100px;
+    top: 85px;
     right: -42px;
     height: 40px;
     width: 40px;
@@ -36,13 +34,11 @@
   }
 
   .sidebar-toggle-button:hover {
-    box-shadow: 0 0 10px var(--primary-color);
+    @include mixins.mainColorBoxShadow;
   }
-
   .sidebar-toggle-button:active {
-    transform: scale(0.95);
+    box-shadow: none;
   }
-
   .sidebar-toggle-button:focus {
     outline: none;
   }

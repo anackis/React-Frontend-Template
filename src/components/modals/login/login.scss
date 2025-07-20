@@ -3,6 +3,9 @@
 .login-component {
   @include mixins.absoluteCenter;
 
+  h1 {
+    color: #fff;
+  }
   p {
     line-height: 20px;
     letter-spacing: 0.5px;

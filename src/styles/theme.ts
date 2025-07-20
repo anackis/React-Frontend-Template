@@ -50,7 +50,7 @@ export const getAppTheme = (
           outlined: ({ theme }) => ({
             borderWidth: 2,
             ...(theme.palette.mode === "dark" && {
-              borderColor: "#888",
+              borderColor: "#fff",
               color: "#fff",
               "&:hover": {
                 backgroundColor: "rgba(255,255,255,0.08)",
