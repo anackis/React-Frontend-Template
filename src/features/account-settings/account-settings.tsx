@@ -1,51 +1,51 @@
+import { useState } from "react"
 import { useFirebaseAuth } from "../../hooks/firebase-hooks/useFirebaseAuth"
-import {
-  Container,
-  Paper,
-  Box,
-  Typography,
-  Avatar,
-  TextField,
-  Button,
-  Divider,
-} from "@mui/material"
+import { Container, Paper, Box, Tabs, Tab } from "@mui/material"
+import { ProfileTab } from "./tabs/profile-tab"
+import { SecurityTab } from "./tabs/security-tab"
+import { AccountActionsTab } from "./tabs/account-actions-tab"
 
 export const AccountSettings = () => {
   const { currentUser } = useFirebaseAuth()
+  const [tab, setTab] = useState(0)
 
   return (
-    <Container maxWidth="sm" sx={{ mt: 4 }}>
-      <Paper elevation={3} sx={{ p: 4 }}>
-        <Box display="flex" flexDirection="column" alignItems="center">
-          <Avatar sx={{ width: 80, height: 80, mb: 2 }}>
-            {currentUser?.displayName?.[0] || "U"}
-          </Avatar>
-          <Typography variant="h5" gutterBottom>
-            {currentUser?.displayName || "User"}
-          </Typography>
-          <Typography variant="body2" color="text.secondary" gutterBottom>
-            {currentUser?.email}
-          </Typography>
-        </Box>
-        <Divider sx={{ my: 3 }} />
-        <Box display="flex" flexDirection="column" gap={2}>
-          <TextField
-            label="Display Name"
-            defaultValue={currentUser?.displayName}
-            fullWidth
-          />
-          <TextField
-            label="Email"
-            defaultValue={currentUser?.email}
-            fullWidth
-            disabled
-          />
-          <Button variant="contained" color="primary" fullWidth>
-            Change Password
-          </Button>
-          <Button variant="outlined" color="error" fullWidth>
-            Delete Account
-          </Button>
+    <Container
+      maxWidth="md"
+      sx={{
+        position: "absolute",
+        top: "54%",
+        left: "50%",
+        transform: "translate(-50%, -50%)",
+        height: "80%",
+      }}
+    >
+      <Paper elevation={3} sx={{ p: 4, height: "95%" }}>
+        <Box display="flex" gap={4} sx={{ height: "100%" }}>
+          <Box
+            sx={{
+              minWidth: 200,
+              borderRight: 1,
+              borderColor: "divider",
+              height: "100%",
+            }}
+          >
+            <Tabs
+              orientation="vertical"
+              value={tab}
+              onChange={(_, v) => setTab(v)}
+              aria-label="Account Settings Sections"
+            >
+              <Tab label="Profile" />
+              <Tab label="Security" />
+              <Tab label="Account Actions" />
+            </Tabs>
+          </Box>
+          <Box flex={1}>
+            {tab === 0 && <ProfileTab currentUser={currentUser} />}
+            {tab === 1 && <SecurityTab />}
+            {tab === 2 && <AccountActionsTab />}
+          </Box>
         </Box>
       </Paper>
     </Container>

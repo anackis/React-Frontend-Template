@@ -10,6 +10,7 @@
   animation: slideDown 1.3s forwards;
   font-size: 20px;
   z-index: 999;
+  transition: all 0.5s ease-in-out;
   .nav-container {
     display: flex;
     justify-content: space-between;
@@ -52,23 +53,26 @@
   .navbar-link:hover {
     text-shadow: 0 0 2px #fff, 0 0 4px var(--primary-color),
       0 0 5px var(--primary-color), 0 0 6px var(--primary-color);
+    color: #fff !important;
   }
   .navbar-links .active {
     text-shadow: 0 0 2px #fff, 0 0 5px var(--primary-color),
       0 0 6px var(--primary-color), 0 0 10px var(--primary-color),
       0 0 15px var(--primary-color);
+    color: #fff !important;
   }
 
   .settings-btn {
     width: 35px;
     height: 35px;
     border-radius: 8px;
-    background: var(--primary-color);
-    border: none;
+    // background: var(--primary-color);
+    // background: #262626;
+    border: 2px solid var(--primary-color);
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: box-shadow 0.2s;
+    transition: box-shadow 0.2s, background-color 0.5s ease-in-out;
     margin: 0 5px;
     &:hover {
       @include mixins.mainColorBoxShadow;

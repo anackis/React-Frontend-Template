@@ -1,7 +1,11 @@
-import { NavLink } from "react-router-dom";
-import { handleLogout } from "./login-handlers";
+import { NavLink } from "react-router-dom"
+import { handleLogout } from "./login-handlers"
 
-export function AlreadyLoggedInNotification({ setError }: { setError: (msg: string) => void }) {
+export function AlreadyLoggedInNotification({
+  setError,
+}: {
+  setError: (msg: string) => void
+}) {
   return (
     <div className="login-component">
       <div className="login-notification">
@@ -11,8 +15,8 @@ export function AlreadyLoggedInNotification({ setError }: { setError: (msg: stri
             <button className="button" onClick={() => handleLogout(setError)}>
               Logout
             </button>
-            <NavLink className="button ghost" to="/">
-              Home
+            <NavLink className="button ghost" to="/account-settings">
+              profile
             </NavLink>
           </div>
         </div>
