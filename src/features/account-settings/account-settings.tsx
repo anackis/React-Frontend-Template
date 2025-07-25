@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { useFirebaseAuth } from "../../hooks/firebase-hooks/useFirebaseAuth"
 import { Container, Paper, Box, Tabs, Tab } from "@mui/material"
-import { ProfileTab } from "./tabs/profile-tab"
+import { ProfileTab } from "./tabs/profile-tab/profile-tab"
 import { SecurityTab } from "./tabs/security-tab"
 import { AccountActionsTab } from "./tabs/account-actions-tab"
 

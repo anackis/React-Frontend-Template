@@ -51,15 +51,10 @@ export function App() {
         >
           <Routes>
             <Route path="/" element={<Home />} />
-
             <Route path="/about" element={<About />} />
-
             <Route path="/login" element={<Login />} />
-
             <Route path="/account-settings" element={<AccountSettingsPage />} />
-
             <Route path="/icons" element={<IconShowcase />} />
-
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </div>

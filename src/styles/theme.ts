@@ -85,5 +85,22 @@ export const getAppTheme = (
           },
         },
       },
+      MuiOutlinedInput: {
+        styleOverrides: {
+          root: {
+            borderRadius: 10,
+          },
+          notchedOutline: {
+            borderRadius: 10,
+          },
+        },
+      },
+      MuiFilledInput: {
+        styleOverrides: {
+          root: {
+            borderRadius: 10,
+          },
+        },
+      },
     },
   })
